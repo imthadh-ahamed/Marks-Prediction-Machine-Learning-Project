@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/Style.css">
+    <title>Prediction Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>End Semester Marks Prediction</h1>
+        <form method="POST" action="/predict">
+            <label for="MSE">Mid Semester Marks: </label>
+            <input type="number" name="MSE" id="MSE" required>
+            <label for="Attendance">Attendance: </label>
+            <input type="number" name="Attendance" id="Attendance" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction is not none %}
+        <p>Predicted End Semester Marks: {{ prediction }}</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
